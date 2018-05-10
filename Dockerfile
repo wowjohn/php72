@@ -1,4 +1,4 @@
-FRom php:7.2-fpm
+FROM php:7.2-fpm
 
 # 安装基本配置
 RUN docker-php-source extract \
@@ -30,9 +30,9 @@ RUN  curl -sS https://getcomposer.org/installer | php \
     && composer config -g repo.packagist composer https://packagist.phpcomposer.com
 
 # 创建代码目录 并指定用户
-RUN mkdir -p /home/httpd/ \
-    && chown webid:webid /home/httpd/
+RUN mkdir -p /home/work/ \
+    && chown webid:webid /home/work/
 
-WORKDIR /home/httpd
+WORKDIR /home/work
 
 
